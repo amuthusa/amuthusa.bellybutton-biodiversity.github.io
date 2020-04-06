@@ -38,7 +38,7 @@ function  buildMetadata(selectedValue) {
         
         panel.html("");
         Object.entries(filteredMetadata).forEach(entry => {
-            panel.append("h6").text(entry[0] + " : "+ entry[1]);
+            panel.append("h6").append("b").text(entry[0] + " : "+ entry[1]);
         });
         
     });
@@ -140,8 +140,7 @@ function buildGaugeChart(metadatas, selected_wfreq, selected_sample_datas) {
             axis: { range: [null, max_wfreq], ticks: '',
                     tickmode: 'array',
                     tickvals: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                    ticktext: ['0-1', '1-2', '2-3', '3-4', '4-5', '5-6', '6-7', '7-8', '8-9'],
-                    ticktextposition: 'middle center'
+                    ticktext: ['0-1', '1-2', '2-3', '3-4', '4-5', '5-6', '6-7', '7-8', '8-9']
                 },
             bar: {color: 'blue', thickness: 0.1},
             steps: [
