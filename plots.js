@@ -60,7 +60,7 @@ function buildVisualization(selectedValue) {
         let filteredMetadata = metadatas.filter(metadata => metadata.id == selectedValue)[0];
         buildBarChart(sample_datas);
         buildBubbleChart(sample_datas);
-        buildGaugeChart(metadatas, filteredMetadata.wfreq, sample_datas);
+        buildGaugeChart(metadatas, filteredMetadata.wfreq);
     });
 }
 
@@ -80,7 +80,7 @@ function buildBarChart(sample_datas) {
 
     // Apply the group bar mode to the layout
     var layout = {
-        title: 'Top 10 Bacteria specimen',
+        title: 'Top 10 Bacteria species in the Naval',
         margin: {
             l: 100,
             r: 100,
@@ -125,7 +125,7 @@ function buildBubbleChart(sample_datas) {
     Plotly.newPlot("bubble", data, layout);
 }
 
-function buildGaugeChart(metadatas, selected_wfreq, selected_sample_datas) {
+function buildGaugeChart(metadatas, selected_wfreq) {
     let wfreqs = getWeeklyWashFrequenceRange(metadatas);
     console.log(wfreqs);
     let max_wfreq = wfreqs[wfreqs.length - 1];
